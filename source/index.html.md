@@ -1,5 +1,4 @@
 ﻿
-
 # Pipz | Manual do Usuário
  
 Olá! Seja muito bem vindo ao Pipz Automation!
@@ -28,8 +27,7 @@ Na página inicial aparecem todos os seus usuários criados, um overview de suas
 ## Como criar times
 Para criar um novo time, acesse o menu Settings, depois clique em Team, e depois clique em Teams. No campo superior direito, clique no botão ![Botão de adicionar](https://pipz.com/static/images/blog/add.png) e você será redirecionado para a página de preenchimento do nome do novo time a ser criado.
 Na página inicial de cada time você terá uma lista de todos os usuários criados na ferramenta, cada um precedido por uma checkbox. Desta forma, você pode facilmente gerir quais os contatos farão parte desta lista.
-## Como atribuir permissões
-**Ainda não está Disponível. Como será? Já adicionar agora? (Perguntar Dev)**
+
 # Instalando o Tracker
 Antes de começar, é importante saber que as ações iniciais dentro do Pipz tem caráter mais técnico, pois serão feitas dentro do código HTML do seu site/app. Portanto será necessário contar com o auxílio de um integrante da sua equipe de DEV ou do desenvolvedor do seu Website/App. Se você não tiver acesso a alguém com este perfil, entre em contato conosco para encontrarmos uma solução.
 ## O que é o Tracker e qual sua função
@@ -92,8 +90,6 @@ O dashboard é um painel que fornece uma visão geral com as métricas chave par
 Logo abaixo, no mesmo submenu onde está localizado o tracker, é possível acessar a lista de eventos pré-estabelecida do Pipz. Esses eventos são todas as ações geradas pelos seus contatos, tanto anônimos quanto identificados, dentro de seu Website/App. Os eventos de contatos identificados podem ser utilizados na criação de fluxos de automação, na definição de segmentos inteligentes e na geração de relatórios, funis e dashboards analíticos. 
 Os eventos de usuários identificados estão sempre atrelados a um endereço de e-mail, sendo este o identificador único de cada contato. Antes de começar a criar eventos e alimentar a plataforma, tire um tempo para mapear o seu negócio e defina todos os eventos importantes da jornada dos seus usuários.
 
- **Assista uma representação animada de como funciona o registro de eventos na plataforma.**
-
 Todos os eventos enviados ao Pipz ficam armazenados em Settings > Apps > Events
 ![Events armazenados no Pipz](https://pipz.com/static/images/blog/events2.png) 
 
@@ -115,23 +111,28 @@ Para identificar os contatos ativos no seu Website/App, você deve executar o m�
 ## Como criar eventos personalizados (pipz.track)
 Para enviar eventos para o Pipz, você deve executar o método track. Inúmeras propriedades podem ser enviadas nesse método. É importante salientar que para ser possível utilizar tais propriedades como condições nas automações e na definição de segmentos, elas devem ser enviadas na raiz, ou seja, não envie objetos dentro de outros objetos.
 
+~~~ javascript
     <script>
     pipz.track('Ebook Download', {
           	title: 'Growth Hacking 101',
           	language: 'English'
      	    });
     </script>
- 
+~~~ 
+
 ## Como rastrear visualizações de página (pipz.page)
 Este método, para registrar o evento Page view - quando um visitante anônimo ou identificado acessa o seu Website/App - conta com uma diferença importante: ele atribui, automaticamente, informações relacionadas à origem do contato, como título da página acessada, URL, path, referrer e search, logo,você não precisa enviar estes atributos junto ao evento. Segue modelo: 
 
+~~~ javascript
     <script> 
     pipz.page();
     </script>
+~~~
 
 ## Como criar e enviar eventos para o sistema
 A criação e envio dos eventos devem ser feitos conforme os modelos apresentados acima. Caso o seu usuário ainda seja anônimo, e você queira identificá-lo ao mesmo tempo em que envia o evento,o faça da seguinte forma (este método deve ser inserido dentro de uma função no seu arquivo javascript):
-   
+
+~~~ javascript
  <script>
     pipz.identify('johndoe123', {
         name: 'John Doe',
@@ -143,6 +144,7 @@ A criação e envio dos eventos devem ser feitos conforme os modelos apresentado
         }
     });
     </script>
+~~~
 
 ## Como atribuir CEI e Lead Score à eventos
 Ao criar e enviar eventos para o Pipz, eles ficam armazenados na sua conta, e você pode acessá-los clicando no menu Settings, depois em Apps e por fim em Events. Nesta página você visualiza todos os eventos criados na sua conta com os seus respectivos Presentation Name(o nome como aparece nas listagens de eventos dentro do Pipz), Event (o nome do evento conforme criado na base de dados), a data de criação e os valores de Lead Score e CEI. 
@@ -384,9 +386,9 @@ Para gerar a versão plain text, muito importante para a melhoria de entregabili
 ## O que são e para que servem
 Os funis são uma forma visual de analisar as conversões de eventos, e que facilita a tomada de decisões relacionadas ao planejamento e estrutura da jornada de clientes.
 
->Ex.:
+*Ex.:
  1: De 1000 e-mails enviados para contatos, quantos foram abertos? Destes, quantos clicados? E destes, quantos respondidos?
-2: De 500 formulários preenchidos em uma Landing Page do seu produto, quantos contatos converteram em trial? Quantos converteram em clientes pagos?
+2: De 500 formulários preenchidos em uma Landing Page do seu produto, quantos contatos converteram em trial? Quantos converteram em clientes pagos?*
 
 ## Como criar e configurar um funil personalizado
 Acesse o menu Funnels > clique no ícone ![Botão de adicionar](https://pipz.com/static/images/blog/add.png) e dê um nome ao seu funil. Para decidir os eventos que serão analisados, selecione o Tracker que deseja, escolha os eventos que aparecem em lista do lado esquerdo e os arraste para a área de Funnel’s events à direita. Quando todos os eventos já estiverem definidos, clique no ícone ![Botão de salvar](https://pipz.com/static/images/blog/save.png)  para salvar no topo direito e então o funil será gerado com os dados das conversões definidos por você.
@@ -455,7 +457,7 @@ Há um total de cinco parâmetros que você pode adicionar aos seus URLs:
 * utm_campaign: o nome da campanha individual, o slogan, o código promocional etc. de um produto.
 * utm_term: identifique palavras-chave de pesquisa paga. Se você estiver codificando manualmente campanhas de palavras-chave pagas, também deverá usar o parâmetro utm_term para especificar a palavra-chave.
 * utm_content: usado para diferenciar conteúdo semelhante ou links dentro do mesmo anúncio. Por exemplo, se tiver dois links de call to action na mesma mensagem de e-mail, você poderá usar utm_content e definir valores diferentes para cada um. Assim, saberá qual versão é a mais eficiente.
->Ex.: defina o parâmetro utm_source como newsletter para identificar o tráfego proveniente de boletins informativos. Em seguida, combine-o com o parâmetro utm_campaign definido como june para identificar que essa foi a campanha do mês de junho.
+*Ex.: defina o parâmetro utm_source como newsletter para identificar o tráfego proveniente de boletins informativos. Em seguida, combine-o com o parâmetro utm_campaign definido como june para identificar que essa foi a campanha do mês de junho.*
 Os parâmetros utm_source, utm_medium e utm_campaign são obrigatórios, os demais são opcionais e podem ser usados para acompanhar informações adicionais:
 ## Como pré-visualizar, testar e enviar uma campanha
 No header dentro de cada campanha você terá acesso a alguns ícones, sendo eles:
@@ -605,14 +607,15 @@ Para utilizar moedas a fim de atribuir valor ao seu card, de acordo com as trans
 ## Priority
 Defina os diferentes níveis de prioridade para atendimento de seus clientes. Cada prioridade terá uma cor, criando um ícone facilmente identificável à frente do card.
 ## Como acessar os boards
-Agora que você já entendeu como criar um board, configurar os cards e as colunas dos seus boards, é hora de começar a utilizar este recurso.
+Agora que você já entendeu como criar um board, configurar os seus cards e colunas, é hora de começar a utilizar este recurso.
 Para acessar todos os boards que já foram criados, acesso o menu Boards e selecione o board que deseja visualizar na listagem que aparece no topo direito da página.
+
 ### Botões
 No topo direito da página, você encontra alguns botões que te ajudarão a melhorar a visualização do seu board e a encontrar cards mais facilmente. O primeiro é o botão de atualização; o segundo é o de quick filter, que ao ser clicado habilita a área de criação de filtros ao lado esquerdo do board, possibilitando a segmentação de cards por atributos específicos; os dois últimos auxiliam na visualização, sendo o primeiro para condensar os cards - para uma visualização mais simples do título, owner e prioridade - e o segundo para expandir a área do board, condensando os menus.
 ## Como criar um card
 Para criar cards, você deve clicar no botão de adição da coluna onde o card deverá ser inserido. Este card será criado no modelo do card type pré-definido para este board. 
-##Entendendo o card
 
+##Entendendo o card
 Ao criar um novo card, você estará na aba “General” onde estão todas os campos configurados por você no card type. Primeiro aparecem os campos configurados nos System Fields do card type e logo após os campos criados por você.
 Do lado direito do card você encontra as seguintes opções:
 
@@ -622,3 +625,12 @@ Do lado direito do card você encontra as seguintes opções:
 * Upload a file: você pode adicionar arquivos que estejam relacionados com este card, facilitando o acesso por outros membros 
 * Archive: o card será arquivado e você poderá acessá-lo posteriormente, mesmo ele não estando mais visível no seu board;
 * Delete: nesta opção você irá deletar o seu card, sem possibilidade de recuperação do mesmo.
+
+Ao lado esquerdo do card você tem mais algumas opções:
+
+* Due date: você pode definir datas e horários para que o card seja movido para outra coluna. Basta selecionar a data e o horário desejados, selecionar à coluna de destino e clicar no botão de adição;
+* Watchers: selecione os usuários que poderão acessar o card e receber notificações à cada modificação feita;
+* Members: os usuários selecionados aqui poderão submeter comentários, fazer modificações e atualizações no card;
+* Attachment: aqui você visualiza todos os arquivos anexados ao card;
+* Comments: crie notas à cada contato com o seu cliente, fazendo com que sua equipe esteja sempre atualizada sobre todos os contatos estabelecidos;
+* History: visualize todo o histórico de ações tomadas neste card em ordem cronológica.
