@@ -1,5 +1,4 @@
-﻿
-# Pipz | Manual do Usuário
+﻿# Pipz | Manual do Usuário
  
 Olá! Seja muito bem vindo ao Pipz Automation!
 Estamos muito felizes que você escolheu a nossa plataforma de automação de marketing. Excitado para dar um upgrade na sua empresa Nós, com certeza estamos ![Eddie feliz](httpspipz.comstaticimagesblogeddie.png)
@@ -509,12 +508,6 @@ As informações do clientes serão exibidas ao clicar no ícone de perfil local
 
 ![Como visualizar o perfil do contato](https://pipz.com/static/images/blog/conversations-profile.png)
 
-
-# Adicionar:
- 
-**Kanban - Fazer junto com a Lu**
-
-----------------------------------------------------
 # Business Intelligence(BI)
 ## O que é e para que serve
 Este recurso irá te ajudar a entender o seu negócio mais profundamente. Todos os departamentos podem ser beneficiados com estes relatórios. O time de Customer Success poderá visualizar a variação de tickets abertos e fechados num determinado período de tempo; o time de vendas poderá analisar a quantidade de conversões de clientes trial a cliente pagos; o marketing terá uma forma visual de analisar os horários de maior acesso ao blog; entre muitos outros exemplos.
@@ -549,13 +542,6 @@ Você pode personalizar o seu gráfico de diferentes formas. Uma delas é clican
 * Legend: pra escolher manter a legenda visível, basta marcar ou desmarcar a opção “Show legend”. Se decidir por mantê-la ativa, outras opções ficarão disponíveis -a orientação da legenda, vertical ou horizontal; a cor e largura da borda; posições da legenda em relação ao X e Y no gráfico; e cor, tamanho e fonte da legenda;
 * Margins and Paddings: aqui você define as dimensões das margens e paddings do seu gráfico. Sendo margens a distância do gráfico em sua totalidade e das bordas da área de edição, e paddings a distância entre as legendas e as imagens do gráfico;
 * Global font: defina aqui a família, cor e tamanho da fonte utilizada em todo o gráfico.
-
-
-**Prints de Gráficos com explicações de como foram criados**
-Model: Contact>Contact  | Measures: Id(Tipo: comparação| last month | creation date| Good)
-Model: Conversation | Measures: Id(tipo coluna stacked) X Group by Chanel Id(filter by Chat) + Creation date(period: Day) X Filters: Creation date= Last 30 days
-Model: Contact>Contact engagement| Measure: Time Spent(Tipo heatmap) X Group by: Creation day(Period:Hour of the day) + Creation date(Period:Weekday)
-
 
 # Board
 ## O que é e pra que serve
