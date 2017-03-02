@@ -83,7 +83,7 @@ html, body {
   &>img {
     display: block;
     max-width: 100%;
-    background:#57C5C9;
+    background:#02AEAB;
     margin-top: -18px;
   }
 
@@ -643,4 +643,9 @@ html, body {
 
 .highlight, .highlight .w {
   background-color: $code-bg;
+}
+
+.highlight .err {
+    color: #ffffff;
+    background-color: #37474f;
 }
